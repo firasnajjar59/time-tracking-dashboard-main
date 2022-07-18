@@ -1,0 +1,210 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: $primaryFont;
+    font-size: 18px;
+    color: $PaleBlue;
+    box-sizing: border-box;
+}
+@mixin gridtemplate($colStart,$colEnd,$rowStart,$rowEnd,$bgcolor) {
+    grid-column-start:$colStart ;
+    grid-column-end: $colEnd;
+    grid-row-start: $rowStart;
+    grid-row-end: $rowEnd;
+    border-radius: 0.5em;
+    background-color: $bgcolor;
+    
+}
+%relative{
+    position: relative;
+}
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $VeryDarkBlue;
+
+    .grid{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        .item1{
+            @include gridtemplate(1,2,1,3,$DarkBlue);
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+          .btn-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            padding: $padding;
+            button{
+                width: fit-content;
+                border: none;
+                background-color: transparent;
+                font-size: 0.8em;
+                &:hover{
+                    color: white;
+                }
+            }
+          }
+         
+        }
+        .item2{
+            @extend %relative;
+            @include gridtemplate(2,3,1,2,$LightRed);
+        }
+        .item3{
+            @extend %relative;
+            @include gridtemplate(3,4,1,2,$SoftBlue);
+        }
+        .item4{
+            @extend %relative;
+            @include gridtemplate(4,5,1,2,$LightRedStudy);
+        }
+        .item5{
+            @extend %relative;
+            @include gridtemplate(2,3,2,3,$LimeGreen);
+        }
+        .item6{
+            @extend %relative;
+            @include gridtemplate(3,4,2,3,$Violet);
+        }
+        .item7{
+            @extend %relative;
+            @include gridtemplate(4,5,2,3,$SoftOrange);
+        }
+    }
+}
+.info{
+    
+    background-color: $DarkBlue;
+    border-radius: 0.4em;
+    padding: $padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2.5em;
+    position: relative;
+    z-index: 10;
+    :nth-child(2){
+        font-size: 2.5em;
+        font-weight: 300;
+        color: white;
+    }
+    :nth-child(3){
+        font-size: 0.7em;
+        font-weight: 300;
+    }
+    &:hover{
+        background-color: $DesaturatedBlue;
+    }
+    .info-title{
+       
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .icon{
+            display: flex;
+
+        }
+        h3{
+            font-size: 0.8em;
+            font-weight: 500;
+            color: white;
+        }
+    }
+   
+}
+.info-main{
+    border-radius: 0.5em;
+    background-color: $Blue;
+    padding: $padding;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+   
+    p{
+        margin-top: 2.5em;
+        font-size: 0.8em;
+    }
+    h1{
+        font-size: 2em;
+        font-weight: 300;
+        color: white;
+    }
+    img{
+        width: 35%;
+        border: 0.2em solid white;
+        border-radius: 50%;
+    }
+}
+.active{
+    color: white;
+}
+.bg-img{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    z-index: 5;
+}
+@media screen and (max-width: 992px){
+   .container{ 
+    .grid{
+        padding: 4em 0 ;
+        display: flex;
+        flex-direction: column;
+        .item1{
+            .info-main{
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 2em;
+              
+            
+                .name{
+                    p{
+                        margin-top: 0;
+                    }
+                }
+            }
+            width: 100%;
+            .btn-wrapper{
+                flex-direction: row;
+                justify-content: space-around;
+                button{font-size: 1em;}
+            }
+        }
+        .item2{
+            width: 100%;
+        }
+        .item3{
+            width: 100%;
+        }
+        .item4{
+            width: 100%;
+        }
+        .item5{
+            width: 100%;
+        }
+        .item6{
+            width: 100%;
+        }
+        .item7{
+            width: 100%;
+        }
+    }
+}
+
+}

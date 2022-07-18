@@ -1,0 +1,224 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  color: hsl(236deg, 100%, 87%);
+  box-sizing: border-box;
+}
+
+.container .grid .item7, .container .grid .item6, .container .grid .item5, .container .grid .item4, .container .grid .item3, .container .grid .item2 {
+  position: relative;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(226deg, 43%, 10%);
+}
+.container .grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.container .grid .item1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 0.5em;
+  background-color: hsl(235deg, 46%, 20%);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .grid .item1 .btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+}
+.container .grid .item1 .btn-wrapper button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  font-size: 0.8em;
+}
+.container .grid .item1 .btn-wrapper button:hover {
+  color: white;
+}
+.container .grid .item2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-radius: 0.5em;
+  background-color: hsl(15deg, 100%, 70%);
+}
+.container .grid .item3 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-radius: 0.5em;
+  background-color: hsl(195deg, 74%, 62%);
+}
+.container .grid .item4 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-radius: 0.5em;
+  background-color: hsl(348deg, 100%, 68%);
+}
+.container .grid .item5 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border-radius: 0.5em;
+  background-color: hsl(145deg, 58%, 55%);
+}
+.container .grid .item6 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border-radius: 0.5em;
+  background-color: hsl(264deg, 64%, 52%);
+}
+.container .grid .item7 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border-radius: 0.5em;
+  background-color: hsl(43deg, 84%, 65%);
+}
+
+.info {
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 0.4em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2.5em;
+  position: relative;
+  z-index: 10;
+}
+.info :nth-child(2) {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: white;
+}
+.info :nth-child(3) {
+  font-size: 0.7em;
+  font-weight: 300;
+}
+.info:hover {
+  background-color: hsl(235deg, 45%, 61%);
+}
+.info .info-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info .info-title .icon {
+  display: flex;
+}
+.info .info-title h3 {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: white;
+}
+
+.info-main {
+  border-radius: 0.5em;
+  background-color: hsl(246deg, 80%, 60%);
+  padding: 1em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.info-main p {
+  margin-top: 2.5em;
+  font-size: 0.8em;
+}
+.info-main h1 {
+  font-size: 2em;
+  font-weight: 300;
+  color: white;
+}
+.info-main img {
+  width: 35%;
+  border: 0.2em solid white;
+  border-radius: 50%;
+}
+
+.active {
+  color: white;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  z-index: 5;
+}
+
+@media screen and (max-width: 992px) {
+  .container .grid {
+    padding: 4em 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .container .grid .item1 {
+    width: 100%;
+  }
+  .container .grid .item1 .info-main {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+  .container .grid .item1 .info-main .name p {
+    margin-top: 0;
+  }
+  .container .grid .item1 .btn-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .container .grid .item1 .btn-wrapper button {
+    font-size: 1em;
+  }
+  .container .grid .item2 {
+    width: 100%;
+  }
+  .container .grid .item3 {
+    width: 100%;
+  }
+  .container .grid .item4 {
+    width: 100%;
+  }
+  .container .grid .item5 {
+    width: 100%;
+  }
+  .container .grid .item6 {
+    width: 100%;
+  }
+  .container .grid .item7 {
+    width: 100%;
+  }
+}/*# sourceMappingURL=main.css.map */
